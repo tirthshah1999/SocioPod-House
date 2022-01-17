@@ -1,27 +1,38 @@
 import './App.css';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Switch} from 'react-router-dom';
 import Navigation from './components/shared/Navigation/Navigation';
 import Home from './pages/Home/Home';
-import Register from './pages/Register/Register';
-import Login from './pages/Login/Login';
+import Authenticate from './pages/Authenticate/Authenticate';
+import Activate from './pages/Activate/Activate';
+import Rooms from './pages/Rooms/Rooms';
+import GuestRoute from './routes/protectedRoutes/GuestRoute';
+import SemiProtectedRoute from './routes/protectedRoutes/SemiProtectedRoute';
+import ProtectedRoute from './routes/protectedRoutes/ProtectedRoute';
 
 function App() {
   return (
     <Router>
       <Navigation />
       <Switch>
-        <Route path="/" exact>
+        <GuestRoute path="/" exact>
           <Home />
-        </Route>
-        <Route path='/register'>
-          <Register />
-        </Route>
-        <Route path='/login'>
-          <Login />
-        </Route>
+        </GuestRoute>
+        <GuestRoute path="/authenticate">
+          <Authenticate />
+        </GuestRoute>
+        <SemiProtectedRoute path="/activate">
+          <Activate />
+        </SemiProtectedRoute>
+        <ProtectedRoute path="/rooms">
+          <Rooms />
+        </ProtectedRoute>
       </Switch>
     </Router>
   );
 }
+
+
+
+
 
 export default App;

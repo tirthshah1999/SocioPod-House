@@ -15,7 +15,7 @@ const Home = () => {
     const history = useHistory();
     
     function register(){
-        history.push('/register');
+        history.push('/authenticate');
     }
 
     return (
@@ -26,16 +26,16 @@ const Home = () => {
                     This is SocioPod House where you can listen your favorite podcasters
                 </p>
                 <div>
-                    <Button onClick={register} text="Get your username" />
+                    <Button onClick={register} text="Let's Go" />
                 </div>
-                <div className={styles.signinWrapper}>
+                {/*<div className={styles.signinWrapper}>
                     <span className={styles.hasInvite}>
                         Have an invite text?
                     </span>
                     <Link style={signInLinkStyle} to="/login">
                         Sign in
                     </Link>
-                </div>
+                </div> */}
             </Card>
         </div>
     )
