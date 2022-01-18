@@ -1,0 +1,16 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Tirth Shah",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server",
+    "start": "node server"
+  },
+  "dependencies": {
+    "dotenv": "^14.2.0",
+    "express": "^4.17.2",
+    "twilio": "^3.73.0"
+  }
+}
