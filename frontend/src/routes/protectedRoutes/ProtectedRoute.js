@@ -1,12 +1,10 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 // If user is logged in and also it is activated then only redirect to rooms
 const ProtectedRoute = ({ children, ...rest }) => {
-  const isAuth = false;
-  const user = {
-      activated: false
-  }
+  const { user, isAuth } = useSelector((state) => state.auth);
   return (
     <Route
       {...rest}
